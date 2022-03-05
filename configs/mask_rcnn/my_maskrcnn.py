@@ -174,7 +174,7 @@ data = dict(
         ann_file=data_root + 'annotations/val.json',
         img_prefix=data_root + 'val/',
         pipeline=test_pipeline))
-evaluation = dict(metric=['bbox', 'segm'])
+evaluation = dict(interval=400,metric=['bbox', 'segm'])
 
 
 
@@ -188,11 +188,13 @@ lr_config = dict(
     warmup_iters=500,
     warmup_ratio=0.001,
     step=[8, 11])
-runner = dict(type='EpochBasedRunner', max_epochs=12)
 
 
+runner = dict(type='IterBasedRunner', max_iters=30000)
+checkpoint_config = dict(by_epoch=False, interval=800) 
 
-checkpoint_config = dict(interval=1)
+
+ 
 # yapf:disable
 log_config = dict(
     interval=50,

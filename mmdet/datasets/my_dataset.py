@@ -22,7 +22,7 @@ from .custom import CustomDataset
 @DATASETS.register_module()
 class MyDataset(CustomDataset):
 
-    CLASSES = ('Chrome_screw' )
+    CLASSES = ('Chrome_screw', )
 
     PALETTE = [(220, 20, 60) ]
 
