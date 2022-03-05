@@ -1,0 +1,15 @@
+#!/bin/bash
+#PBS -P volta_pilot
+#PBS -j oe
+#PBS -N maskrcnn_my
+#PBS -q volta_gpu
+#PBS -l select=1:ncpus=5:mem=50gb:ngpus=1:mpiprocs=1
+#PBS -l walltime=24:00:00
+cd $PBS_O_WORKDIR;
+np=$(cat ${PBS_NODEFILE} | wc -l);
+image="/home/svu/pyni/pyni_final3.sif"
+singularity shell --nv $image bash << EOF > stdout.$PBS_JOBID 2> stderr.$PBS_JOBID
+python3 ./tools/train.py configs/mask_rcnn/my_maskrcnn.py
+# you can put more commands here
+echo “Hello World”
+EOF
