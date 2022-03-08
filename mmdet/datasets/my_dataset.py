@@ -22,9 +22,10 @@ from .custom import CustomDataset
 @DATASETS.register_module()
 class MyDataset(CustomDataset):
 
-    CLASSES = ('Chrome_screw', )
+    CLASSES = ('part1','part2','part3','part4','part5' )
 
-    PALETTE = [(220, 20, 60) ]
+    PALETTE = [(119, 11, 32), (0, 0, 142), (0, 0, 230),
+               (106, 0, 228), (0, 60, 100) ]
 
     def load_annotations(self, ann_file):
         """Load annotation from COCO style annotation file.

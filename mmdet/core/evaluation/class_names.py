@@ -14,6 +14,18 @@ def voc_classes():
     ]
 
 
+
+def mydata_classes():    
+    return [ 'Chrome_screw'  ] 
+
+def mydata_palette():
+    return [[220, 20, 60] ] 
+
+
+
+
+
+
 def imagenet_det_classes():
     return [
         'accordion', 'airplane', 'ant', 'antelope', 'apple', 'armadillo',
@@ -311,7 +323,8 @@ dataset_aliases = {
     'wider_face': ['WIDERFaceDataset', 'wider_face', 'WIDERFace'],
     'cityscapes': ['cityscapes'],
     'oid_challenge': ['oid_challenge', 'openimages_challenge'],
-    'oid_v6': ['oid_v6', 'openimages_v6']
+    'oid_v6': ['oid_v6', 'openimages_v6'],
+'mydata': ['mydata']
 }
 
 

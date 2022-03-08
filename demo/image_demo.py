@@ -19,7 +19,7 @@ def parse_args():
         choices=['coco', 'voc', 'citys', 'random'],
         help='Color palette used for visualization')
     parser.add_argument(
-        '--score-thr', type=float, default=0.3, help='bbox score threshold')
+        '--score-thr', type=float, default=0.97, help='bbox score threshold')
     parser.add_argument(
         '--async-test',
         action='store_true',
